@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { themes } from "../../global/themes";
+import { themas } from "../../global/themes";
 
 export const style = StyleSheet.create({
     container:  {
@@ -10,20 +10,37 @@ export const style = StyleSheet.create({
     boxTop: {
         height:Dimensions.get("window").height/3,
         width:"100%",
-        // /backgroundColor:'red',
+        // backgroundColor:'red',
         alignItems:'center',
         justifyContent:'center'
     },
     boxMid: {
         height:Dimensions.get("window").height/4,
         width:"100%",
-        backgroundColor:'green',
+        // backgroundColor:'green',
         paddingHorizontal:37
     },
     boxBottom: {
         height:Dimensions.get("window").height/3,
         width:"100%",
-        backgroundColor:'blue'
+        // backgroundColor:'blue',
+        alignItems:'center',
+    },
+    button:{
+        width:250,
+        height:40,
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:themas.colors.ligthBlue,
+        borderRadius:40,
+        shadowColor: '000',
+        shadowOffset: {
+            width: 0,
+            height: 3
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 0.46,
+        elevation: 7
     },
     logo: {
         width: 80,
@@ -37,7 +54,7 @@ export const style = StyleSheet.create({
     titleInput: {
         marginTop: 20,
         marginLeft: 5,
-        color:themes.colors.grey
+        color:themas.colors.grey
     },
     boxInput: {
         width:'100%',
@@ -45,11 +62,26 @@ export const style = StyleSheet.create({
         borderWidth:1,
         borderRadius:40,
         marginTop:10,
-        flexDirection:'row'
+        flexDirection:'row',
+        alignItems:'center',
+        paddingHorizontal:5,
+        backgroundColor:themas.colors.LigithGrey,
+        borderColor:themas.colors.MidGrey
     },
     input: {
         height:'100%',
-        width:'100%',
-        backgroundColor:'red'
+        width:'90%',
+        paddingLeft: 5,
+        // backgroundColor:'red',
+        borderRadius:40
+    },
+    textButton: {
+        fontSize: 16,
+        color: 'white',
+        fontWeight:'bold'
+    },
+    textBotton: {
+        fontSize: 16,
+        color: themas.colors.grey
     }
 }) 
