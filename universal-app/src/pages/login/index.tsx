@@ -9,18 +9,20 @@ import {
     Alert,
     ActivityIndicator
 } from "react-native";
-
 import { style } from './style';
 import Logo from "../../assets/React-icon.png";
 import { MaterialIcons, Octicons } from '@expo/vector-icons';
 import { Input } from "../../components/Input"
-
 import { themas } from "../../global/themes";
 import { Button } from "../../components/Button";
+import { useNavigation, NavigationProp } from "@react-navigation/native"
 
 export default function Login () {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+
+    const navigation = useNavigation<NavigationProp<any>>();
+
+    const [email, setEmail] = useState('adm@gmail.com')
+    const [password, setPassword] = useState('adm')
     const [loading, setLoading] = useState(false)
     const [showPassword, setShowPassword] = useState(true)
 
@@ -32,6 +34,8 @@ export default function Login () {
                 return Alert.alert("Atenção", "Informe os campos Obrigatorios")
             }
 
+            navigation.reset({routes:[{name:"BottomRoutes"}]})
+
             setTimeout(() => {
                 if(email =='adm@gmail.com' && password=='adm')
                     Alert.alert("Logado Com Sucesso!")
@@ -39,7 +43,7 @@ export default function Login () {
                     Alert.alert("Usuario não encontrado!")
                 }
                 setLoading(false)
-            }, 3000);
+            }, 500);
 
         } catch (error) {
             console.log("error")
