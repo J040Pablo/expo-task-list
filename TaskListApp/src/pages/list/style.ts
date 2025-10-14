@@ -33,7 +33,9 @@ export const style = StyleSheet.create({
         backgroundColor: "#FFF",
         marginTop: 6,
         borderRadius: 10,
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
         padding: 10,
         borderWidth: 1,
         borderColor: themas.colors.LightGrey,
@@ -42,5 +44,24 @@ export const style = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+    },
+    rowCardLeft: {
+        width: "70%",
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+    },
+    rowCardRight: {
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    flex: 1,
+    },
+    titleCard: {
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+    descriptionCard: {
+        fontSize: 14,
+        color: themas.colors.MidGrey,
     }
 })
