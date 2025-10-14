@@ -11,7 +11,7 @@ export const style = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         paddingHorizontal:5,
-        backgroundColor:themas.colors.LigithGrey,
+        backgroundColor:themas.colors.LightGrey,
         borderColor:themas.colors.MidGrey
     },
     input: {
