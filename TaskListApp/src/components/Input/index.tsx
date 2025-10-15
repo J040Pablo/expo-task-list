@@ -1,6 +1,6 @@
 import { FontAwesome, MaterialIcons, Octicons } from "@expo/vector-icons";
 import React, { forwardRef, Ref } from "react";
-import { Text, TextInput, TextInputProps, TouchableOpacity, View } from "react-native";
+import { StyleProp, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View } from "react-native";
 import { style } from "./style";
 import { themas } from "../../global/themes";
 
@@ -17,6 +17,8 @@ type Props = TextInputProps & {
   title?: string;
   onIconLeftPress?: () => void;
   onIconRigthPress?: () => void;
+  height?: number;
+  labelStyle?: StyleProp<TextStyle>;
 };
 
 export const Input = forwardRef<TextInput, Props>(
@@ -29,6 +31,8 @@ export const Input = forwardRef<TextInput, Props>(
       title,
       onIconLeftPress,
       onIconRigthPress,
+      labelStyle,
+      height,
       ...rest
     } = props;
 
@@ -55,8 +59,8 @@ const calculateSizePaddingLeft = () =>{
 
     return (
       <>
-        {title && <Text style={style.titleInput}>{title}</Text>}
-        <View style={[style.boxInput, { paddingLeft: calculateSizePaddingLeft() }]}>
+        {title && <Text style={[style.titleInput, labelStyle]}>{title}</Text>}
+        <View style={[style.boxInput, { paddingLeft: calculateSizePaddingLeft(),height:height || 40 }]}>
           {IconLeft && IconLeftName && (
             <TouchableOpacity style={style.Button}>
               <IconLeft
@@ -73,7 +77,7 @@ const calculateSizePaddingLeft = () =>{
           <TextInput
             ref={ref}
             style={[
-              style.input,{width:calculateSizeWidth()}
+              style.input,{width:calculateSizeWidth(), height:'100%'}
             ]}
             placeholderTextColor={themas.colors.grey}
             {...rest}
