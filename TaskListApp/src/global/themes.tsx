@@ -9,5 +9,6 @@ export const themas = {
         Othergrey:'#333333',
         bgScreen:'#181818ff',
         red:'#FF494C',
+        transparent:'rgba(0, 0, 0, 0.5)',
     }
 }

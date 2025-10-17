@@ -60,7 +60,7 @@ const calculateSizePaddingLeft = () =>{
     return (
       <>
         {title && <Text style={[style.titleInput, labelStyle]}>{title}</Text>}
-        <View style={[style.boxInput, { paddingLeft: calculateSizePaddingLeft(),height:height || 40 }]}>
+        <View style={[style.boxInput, { paddingLeft: calculateSizePaddingLeft(),height:height || 40}]}>
           {IconLeft && IconLeftName && (
             <TouchableOpacity style={style.Button}>
               <IconLeft
